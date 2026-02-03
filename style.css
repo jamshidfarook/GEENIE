@@ -1,0 +1,96 @@
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: #121212; color: #e0e0e0; }
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+    text-align: center;
+    padding: 6rem 1rem 4rem;
+    border-bottom: 1px solid #333;
+}
+.logo-circle {
+    width: 150px; height: 150px; border-radius: 50%; border: 4px solid #fff; object-fit: cover;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.1); margin-bottom: 1.5rem; transition: transform 0.3s ease;
+}
+.logo-circle:hover { transform: scale(1.1); }
+.hero h1 { font-size: 2.5rem; color: #ffffff; margin-bottom: 0.5rem; }
+.hero-tagline { font-size: 1.2rem; color: #cccccc; max-width: 600px; margin: 0 auto 1.5rem; line-height: 1.6; }
+.amazon-link {
+    display: inline-block; background-color: #FF9900; color: #121212; text-decoration: none;
+    padding: 0.75rem 1.5rem; border-radius: 30px; font-weight: bold; transition: background 0.3s ease, color 0.3s ease;
+}
+.amazon-link:hover { background-color: #e68a00; color: #ffffff; }
+
+/* Flying Girl Section */
+#flyingGirlContainer { position: relative; width: 100%; height: 300px; overflow: hidden; text-align: center; margin: 3rem 0; }
+#flyingGirl {
+    position: absolute; width: 120px; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    animation: float 3s infinite alternate ease-in-out;
+}
+@keyframes float { 0% { transform: translate(-50%, -50%); } 50% { transform: translate(-50%, -60%); } 100% { transform: translate(-50%, -50%); } }
+
+.message {
+    position: absolute; top: 10%; left: 50%; transform: translateX(-50%);
+    background-color: rgba(255,165,0,0.9); color: #121212; padding: 0.5rem 1rem;
+    border-radius: 10px; font-weight: bold; font-size: 1.2rem; opacity: 0; transition: opacity 0.5s ease; pointer-events: none;
+}
+
+/* Description Section */
+.description { max-width: 850px; margin: 3rem auto; padding: 0 1rem; text-align: center; line-height: 1.75; color: #e0e0e0; }
+.description h2 { font-size: 2.4rem; margin-bottom: 2rem; font-weight: 700; color: #ffffff; }
+.description p { font-size: 1.15rem; margin-bottom: 1.8rem; }
+.description p strong { color: #FF9900; }
+
+/* About Maker Trigger Button */
+.about-maker-trigger { text-align: center; margin: 3rem auto; }
+.btn {
+    background-color: #FF9900; color: #121212; padding: 0.75rem 1.5rem; border-radius: 30px;
+    font-weight: bold; border: none; cursor: pointer; transition: background 0.3s ease;
+}
+.btn:hover { background-color: #e68a00; }
+
+/* Modal */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); }
+.modal-content {
+    background-color: #1e1e1e; margin: 10% auto; padding: 2rem; border-radius: 12px;
+    width: 90%; max-width: 600px; text-align: center; color: #e0e0e0; position: relative;
+    animation: popIn 0.4s ease;
+}
+@keyframes popIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.modal .maker-photo { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #555; margin-bottom: 1rem; object-fit: cover; }
+.modal-content a { color: #FF9900; text-decoration: none; }
+.modal-content a:hover { color: #e68a00; text-decoration: underline; }
+.modal .close { position: absolute; top: 12px; right: 20px; font-size: 2rem; font-weight: bold; color: #fff; cursor: pointer; transition: color 0.3s ease; }
+.modal .close:hover { color: #FF9900; }
+
+/* Fade-in Animation */
+.fade-in { opacity: 0; animation: fadeIn 1s forwards; animation-delay: 0.3s; }
+.description.fade-in { animation-delay: 0.6s; }
+.about-maker-trigger.fade-in { animation-delay: 0.9s; }
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* Responsive */
+@media (max-width: 600px) {
+    .logo-circle, #flyingGirl, .modal .maker-photo { width: 120px; height: auto; }
+    .hero h1 { font-size: 2rem; }
+    .description h2, .about-maker-trigger .btn { font-size: 1.5rem; }
+    .hero-tagline { font-size: 1rem; }
+}
+/* Footer */
+.site-footer {
+    background-color: #1a1a1a;
+    color: #888888;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}
+.site-footer a {
+    color: #FF9900;
+    text-decoration: none;
+}
+.site-footer a:hover {
+    color: #e68a00;
+    text-decoration: underline;
+}
